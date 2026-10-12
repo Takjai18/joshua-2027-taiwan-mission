@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>約書亞團2027台灣屏東短宣之旅</title>
+    <meta name="description" content="宣道會基蔭堂約書亞團 2027年3月26日至29日台灣屏東短宣。4日3夜，復活節主日，隊長邱明德。">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#FFFCF6">
+    <meta property="og:title" content="約書亞團2027台灣屏東短宣之旅">
+    <meta property="og:description" content="宣道會基蔭堂約書亞團 · 2027年3月26日至29日 · 4日3夜 · 隊長邱明德">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_HK">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-color: #FFFCF6;
+            --border-color: #3E3A39;
+            --pink: #F2A497;
+            --yellow: #F6D27A;
+            --blue: #A8D3E6;
+            --green: #B9DAA5;
+            --border-width: 3px;
+            --border-radius: 20px;
+        }
+
+        body {
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--border-color);
+            line-height: 1.6;
+        }
+
+        :root { --nav-offset: 6.75rem; }
+        @media (min-width: 640px) {
+            :root { --nav-offset: 4.5rem; }
+        }
+
+        section { scroll-margin-top: calc(var(--nav-offset) + 0.35rem); }
+
+        .pb-card {
+            background-color: white;
+            border: var(--border-width) solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .pb-card.flush {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .pb-card:hover { transform: translateY(-2px); }
+
+        .pb-btn {
+            border: var(--border-width) solid var(--border-color);
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 3px 3px 0px var(--border-color);
+            transition: all 0.1s;
+            color: var(--border-color);
+            text-decoration: none;
+        }
+
+        .pb-btn:active,
+        .pb-btn.is-pressed {
+            box-shadow: 0px 0px 0px var(--border-color);
+            transform: translate(3px, 3px);
+        }
+
+        .pb-tag {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .tag-pink { background-color: var(--pink); }
+        .tag-yellow { background-color: var(--yellow); }
+        .tag-blue { background-color: var(--blue); }
+        .tag-green { background-color: var(--green); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
+        @keyframes bounce-in {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.02); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-bounce-in {
+            animation: bounce-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -2.1rem;
+            top: 0.3rem;
+            width: 16px;
+            height: 16px;
+            border: 3px solid var(--border-color);
+            background-color: white;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item.must-go::before {
+            background-color: var(--pink);
+            transform: scale(1.2);
+        }
+
+        .pb-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 3px solid var(--border-color);
+            border-radius: 6px;
+            background-color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .pb-checkbox:checked { background-color: var(--green); }
+        .pb-checkbox:checked::after {
+            content: "✔";
+            color: var(--border-color);
+            font-weight: 800;
+            font-size: 16px;
+            position: absolute;
+        }
+        .pb-checkbox:focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 2px;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .day-tabs {
+            position: sticky;
+            top: var(--nav-offset);
+            z-index: 40;
+            background: var(--bg-color);
+            padding: 0.35rem 0 0.75rem;
+        }
+
+        .soft-box {
+            background: var(--bg-color);
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 0.85rem 1rem;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-float, .animate-bounce-in, .pb-card { animation: none; transition: none; }
+        }
+    </style>
+</head>
+<body class="pt-20 pb-10 px-4 md:px-8 max-w-3xl mx-auto">
+
+    <nav class="fixed top-0 left-0 w-full bg-[#FFFCF6]/95 backdrop-blur border-b z-50 px-4 py-3" style="border-bottom: 3px solid #3E3A39;">
+        <div class="max-w-3xl mx-auto flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <a href="#hero" class="font-bold text-lg whitespace-nowrap self-start sm:self-auto">⛪ 約書亞團</a>
+            <div class="flex justify-between sm:justify-start gap-1.5 sm:gap-2">
+                <a href="#transport" class="pb-btn bg-[var(--blue)] px-2.5 sm:px-3 py-1 text-sm whitespace-nowrap">交通</a>
+                <a href="#itinerary" class="pb-btn bg-[var(--yellow)] px-2.5 sm:px-3 py-1 text-sm whitespace-nowrap">行程</a>
+                <a href="#prep" class="pb-btn bg-[var(--green)] px-2.5 sm:px-3 py-1 text-sm whitespace-nowrap">準備</a>
+                <a href="#prayer" class="pb-btn bg-[var(--pink)] px-2.5 sm:px-3 py-1 text-sm whitespace-nowrap">禱告</a>
+                <a href="#notes" class="pb-btn bg-[var(--blue)] px-2.5 sm:px-3 py-1 text-sm whitespace-nowrap">須知</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="text-center mt-8 mb-10">
+        <div class="animate-float mb-6 inline-block">
+            <svg width="180" height="180" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="小教堂插圖">
+                <circle cx="100" cy="100" r="90" fill="#A8D3E6" stroke="#3E3A39" stroke-width="4"/>
+                <circle cx="140" cy="60" r="25" fill="#F6D27A" stroke="#3E3A39" stroke-width="4"/>
+                <path d="M 40 90 Q 50 70 70 80 Q 90 65 105 85 Q 120 75 130 90 L 40 90 Z" fill="white" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"/>
+                <rect x="60" y="100" width="80" height="70" fill="white" stroke="#3E3A39" stroke-width="4" rx="5"/>
+                <polygon points="50,100 100,45 150,100" fill="#F2A497" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"/>
+                <line x1="100" y1="20" x2="100" y2="50" stroke="#3E3A39" stroke-width="5" stroke-linecap="round"/>
+                <line x1="85" y1="35" x2="115" y2="35" stroke="#3E3A39" stroke-width="5" stroke-linecap="round"/>
+                <path d="M 85 170 L 85 140 A 15 15 0 0 1 115 140 L 115 170 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="4"/>
+                <line x1="100" y1="140" x2="100" y2="170" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M 20 170 Q 100 160 180 170" stroke="#B9DAA5" stroke-width="15" stroke-linecap="round" fill="none"/>
+                <path d="M 20 170 Q 100 160 180 170" stroke="#3E3A39" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+        </div>
+        <p class="mb-3"><span class="pb-tag tag-pink">3月28日 · 復活節主日</span></p>
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-4 border-b-4 border-[#3E3A39] inline-block pb-2 leading-tight">約書亞團2027<br>台灣屏東短宣之旅</h1>
+        <p class="text-lg md:text-xl font-bold mb-1 leading-snug">
+            <span class="block sm:inline">2027年3月26日（五）</span>
+            <span class="hidden sm:inline"> – </span>
+            <span class="block sm:inline">至 3月29日（一）</span>
+        </p>
+        <p class="text-base font-bold mb-1">4日3夜 · 預計 11 人</p>
+        <p class="text-base font-bold mb-6">隊長：邱明德（德仔）</p>
+
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+            <span class="pb-tag tag-yellow">宣道會基蔭堂</span>
+            <span class="pb-tag tag-blue">中華福音使命團</span>
+            <span class="pb-tag tag-green">台灣 · 屏東恆春</span>
+        </div>
+
+        <div class="pb-card bg-[var(--yellow)] px-4 sm:px-8 py-4 mb-6 w-full sm:w-auto sm:inline-block max-w-full">
+            <h2 class="text-lg font-bold mb-1">距離出發還有</h2>
+            <div id="countdown" class="text-2xl sm:text-4xl font-extrabold leading-tight" aria-live="polite">載入中...</div>
+            <p class="text-sm font-bold mt-1">2027年3月26日 08:00 香港時間起飛</p>
+        </div>
+
+        <div>
+            <button type="button" onclick="sharePage()" class="pb-btn bg-[var(--pink)] px-6 py-2 text-lg">📤 一鍵分享此頁面</button>
+            <p id="share-msg" class="text-sm mt-2 font-bold hidden">連結已複製，可以貼給隊友了</p>
+        </div>
+    </section>
+
+    <section id="about" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">💛 今次點解去</h2>
+        <div class="pb-card">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div class="soft-box" style="background:#FDE8E3;">
+                    <h3 class="font-extrabold mb-1">參加目的</h3>
+                    <p>讓一眾青少年體驗海外宣教，同時讓他們認識台灣的教會。</p>
+                </div>
+                <div class="soft-box" style="background:#FDF3D4;">
+                    <h3 class="font-extrabold mb-1">參加期望</h3>
+                    <p>參加者能在過程中經歷上主，被主使用，同時能開眼界。</p>
+                </div>
+            </div>
+            <blockquote class="soft-box" style="background:#E7F4FA;">
+                <p class="font-bold">「你當剛強壯膽！不要懼怕，也不要驚惶；因為你無論往哪裡去，耶和華你的神必與你同在。」</p>
+                <p class="text-sm font-bold mt-1">約書亞記 1:9</p>
+            </blockquote>
+            <p class="text-sm mt-4">工場日程由中華福音使命團同當地負責人最後編排。下面的航班、住宿同每日流程係隊伍籌備方向，確認後會更新這頁。</p>
+        </div>
+    </section>
+
+    <section id="transport" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4 flex items-center gap-2">
+            <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="10" y="30" width="80" height="40" rx="10" fill="#A8D3E6" stroke="#3E3A39" stroke-width="4"/>
+                <circle cx="25" cy="70" r="12" fill="white" stroke="#3E3A39" stroke-width="4"/>
+                <circle cx="25" cy="70" r="4" fill="#3E3A39"/>
+                <circle cx="75" cy="70" r="12" fill="white" stroke="#3E3A39" stroke-width="4"/>
+                <circle cx="75" cy="70" r="4" fill="#3E3A39"/>
+                <rect x="20" y="40" width="20" height="15" rx="3" fill="white" stroke="#3E3A39" stroke-width="3"/>
+                <rect x="50" y="40" width="30" height="15" rx="3" fill="white" stroke="#3E3A39" stroke-width="3"/>
+            </svg>
+            航班與交通
+        </h2>
+
+        <div class="pb-card">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative overflow-hidden p-4" style="border: 3px solid #3E3A39; border-radius: 15px;">
+                    <div class="absolute top-0 right-0 bg-[var(--pink)] font-bold px-3 py-1" style="border-left: 3px solid #3E3A39; border-bottom: 3px solid #3E3A39; border-bottom-left-radius: 10px;">去程 · 暫定</div>
+                    <p class="font-bold text-lg mb-1">3/26（五）</p>
+                    <p class="text-2xl font-extrabold mb-1">08:00 <span class="text-lg font-bold">HKG 香港</span></p>
+                    <p class="text-sm mb-1">HK Express UO130 · 預計飛行約 1 小時 30 分</p>
+                    <p class="text-2xl font-extrabold mb-2">09:30 <span class="text-lg font-bold">KHH 高雄小港</span></p>
+                    <div class="bg-[var(--yellow)] px-3 py-2 rounded-lg font-bold text-sm" style="border: 2px solid #3E3A39;">
+                        落地後過關、取行李，轉乘墾丁快線（9189）往恆春轉運站，車程約 2.5 小時。班次視當天過關時間而定。
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden p-4" style="border: 3px solid #3E3A39; border-radius: 15px;">
+                    <div class="absolute top-0 right-0 bg-[var(--green)] font-bold px-3 py-1" style="border-left: 3px solid #3E3A39; border-bottom: 3px solid #3E3A39; border-bottom-left-radius: 10px;">回程 · 暫定</div>
+                    <p class="font-bold text-lg mb-1">3/29（一）</p>
+                    <p class="text-2xl font-extrabold mb-1">16:45 <span class="text-lg font-bold">KHH 高雄小港</span></p>
+                    <p class="text-sm mb-1">國泰 CX433</p>
+                    <p class="text-2xl font-extrabold mb-2">18:20 <span class="text-lg font-bold">HKG 香港</span></p>
+                    <div class="bg-[var(--yellow)] px-3 py-2 rounded-lg font-bold text-sm" style="border: 2px solid #3E3A39;">
+                        由恆春轉運站乘快線回高雄。16:45 起飛，要預留國際線報到同安檢，上午就要動身。
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm font-bold mt-4">集合地點同時間，出發前在隊伍群組公布。機票未出之前，以上航班只係籌備用。</p>
+        </div>
+    </section>
+
+    <section id="itinerary" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-2">📅 每日行程</h2>
+        <p class="text-sm font-bold mb-2">粉紅點係這日的重心。時間仍可因工場安排改動。</p>
+
+        <div class="day-tabs flex gap-2 overflow-x-auto no-scrollbar" role="tablist" aria-label="四日行程">
+            <button type="button" onclick="openTab(event, 'day1')" class="tab-btn pb-btn bg-[var(--pink)] px-5 py-2 text-lg flex-shrink-0" id="defaultOpen" role="tab" aria-controls="day1">3/26（五）</button>
+            <button type="button" onclick="openTab(event, 'day2')" class="tab-btn pb-btn bg-[var(--yellow)] px-5 py-2 text-lg flex-shrink-0 opacity-70" role="tab" aria-controls="day2">3/27（六）</button>
+            <button type="button" onclick="openTab(event, 'day3')" class="tab-btn pb-btn bg-[var(--blue)] px-5 py-2 text-lg flex-shrink-0 opacity-70" role="tab" aria-controls="day3">3/28（日）復活</button>
+            <button type="button" onclick="openTab(event, 'day4')" class="tab-btn pb-btn bg-[var(--green)] px-5 py-2 text-lg flex-shrink-0 opacity-70" role="tab" aria-controls="day4">3/29（一）</button>
+        </div>
+
+        <div class="pb-card">
+            <div id="day1" class="tab-content active" role="tabpanel">
+                <h3 class="text-xl font-extrabold mb-6 border-b-2 border-dashed border-[#3E3A39] pb-2">3/26 抵達與安頓</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-blue mb-1">08:00 – 09:30</span>
+                        <h4 class="font-bold text-lg">香港飛高雄</h4>
+                        <p class="text-sm">小港機場出境大堂集合、點名。護照同入台證放在伸手可及的地方。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-yellow mb-1">上午至午間</span>
+                        <h4 class="font-bold text-lg">墾丁快線往恆春</h4>
+                        <p class="text-sm">車上可以小休，沿途是南台灣的田同海。</p>
+                    </div>
+                    <div class="timeline-item must-go">
+                        <span class="pb-tag tag-pink mb-1">重心</span>
+                        <span class="pb-tag tag-green mb-1">下午</span>
+                        <h4 class="font-bold text-lg">民宿 Check-in 與開幕禱告</h4>
+                        <p class="text-sm">放低行李，短宣隊一齊禱告，聽工場負責人講這幾日點行。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-blue mb-1">傍晚</span>
+                        <h4 class="font-bold text-lg">恆春老街</h4>
+                        <p class="text-sm">晚餐自理。可以試試綠豆蒜、洋蔥料理同其他在地小食。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day2" class="tab-content" role="tabpanel">
+                <h3 class="text-xl font-extrabold mb-6 border-b-2 border-dashed border-[#3E3A39] pb-2">3/27 服事與交流</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-yellow mb-1">早上</span>
+                        <h4 class="font-bold text-lg">晨更與早餐</h4>
+                        <p class="text-sm">先安靜，再出門。</p>
+                    </div>
+                    <div class="timeline-item must-go">
+                        <span class="pb-tag tag-pink mb-1">重心</span>
+                        <span class="pb-tag tag-green mb-1">上午</span>
+                        <h4 class="font-bold text-lg">南灣淨灘</h4>
+                        <p class="text-sm">用行動愛護上帝的創造。要搽防曬、戴帽、帶水。穿可以濕、可以污糟的鞋。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-blue mb-1">下午</span>
+                        <h4 class="font-bold text-lg">當地教會青年交流</h4>
+                        <p class="text-sm">見證分享、破冰遊戲。我們是去認識人，不是去表演一場就走。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-pink mb-1">晚上</span>
+                        <h4 class="font-bold text-lg">晚堂與當天分享</h4>
+                        <p class="text-sm">講今日看見的人、自己的感受，以及明日要交託的事。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day3" class="tab-content" role="tabpanel">
+                <h3 class="text-xl font-extrabold mb-6 border-b-2 border-dashed border-[#3E3A39] pb-2">3/28 復活節主日</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item must-go">
+                        <span class="pb-tag tag-pink mb-1">復活節</span>
+                        <span class="pb-tag tag-yellow mb-1">上午</span>
+                        <h4 class="font-bold text-lg">恆春教會主日崇拜</h4>
+                        <p class="text-sm">這日是復活節。一齊敬拜、獻詩，認識在地的弟兄姊妹。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-green mb-1">中午</span>
+                        <h4 class="font-bold text-lg">愛宴</h4>
+                        <p class="text-sm">與教會飯桌相交。食飯的時候，往往是最真實的認識。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-blue mb-1">下午</span>
+                        <h4 class="font-bold text-lg">鵝鑾鼻燈塔</h4>
+                        <p class="text-sm">台灣最南端。看看海，也想想燈是為誰而亮。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-pink mb-1">晚上</span>
+                        <h4 class="font-bold text-lg">感恩晚會</h4>
+                        <p class="text-sm">數算這幾日的恩典，也為恆春的教會禱告。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day4" class="tab-content" role="tabpanel">
+                <h3 class="text-xl font-extrabold mb-6 border-b-2 border-dashed border-[#3E3A39] pb-2">3/29 賦歸</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-green mb-1">早上</span>
+                        <h4 class="font-bold text-lg">退房、伴手禮</h4>
+                        <p class="text-sm">最後機會買恆春小食。行李今晚要托運，液體同重量自己看清楚。</p>
+                    </div>
+                    <div class="timeline-item must-go">
+                        <span class="pb-tag tag-pink mb-1">要準時</span>
+                        <span class="pb-tag tag-yellow mb-1">午前</span>
+                        <h4 class="font-bold text-lg">快線返回高雄小港</h4>
+                        <p class="text-sm">車程約兩個多小時，再加上報到。不要把回程當成還有半日自由活動。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="pb-tag tag-blue mb-1">16:45</span>
+                        <h4 class="font-bold text-lg">飛返香港</h4>
+                        <p class="text-sm">預計 18:20 抵港。回家之後，把這次看見的跟身邊的人說。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="accommodation">
+            <h2 class="text-2xl font-extrabold mb-4">🏠 住宿</h2>
+            <div class="pb-card flush">
+                <div class="h-28 flex items-center justify-center border-b-[3px] border-[#3E3A39]" style="background:#A8D3E6;">
+                    <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="10" y="30" width="80" height="20" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="4"/>
+                        <rect x="15" y="20" width="25" height="15" rx="5" fill="white" stroke="#3E3A39" stroke-width="4"/>
+                        <line x1="10" y1="50" x2="10" y2="60" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="90" y1="50" x2="90" y2="60" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <p class="pb-tag tag-yellow mb-3">待工場確認</p>
+                    <h3 class="text-xl font-bold mb-2">恆春鎮內或附近</h3>
+                    <p class="text-sm mb-3">名稱、地址、電話同入住房間，確認後會寫上這頁，也會貼到群組。</p>
+                    <p class="soft-box text-sm">方向是方便步行或短途去到聚會同老街，避免每日長途接送。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prep">
+            <h2 class="text-2xl font-extrabold mb-4">✅ 我的準備</h2>
+            <div class="pb-card">
+                <p id="todo-progress" class="font-extrabold mb-1">已完成 0 / 12</p>
+                <p class="text-xs font-bold mb-4">剔選只記在這部裝置。換手機或清了瀏覽器紀錄，就要再剔一次。</p>
+                <h3 class="font-extrabold text-sm mb-2">文件</h3>
+                <ul class="space-y-3 font-bold mb-4" id="todo-list">
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="permit"><span>辦好入台證，並自行存好</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="passport"><span>護照有效期涵蓋全程，並多過六個月</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="insurance"><span>旅遊保險，須包括 24 小時緊急支援</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="health"><span>交健康狀況同緊急聯絡人給隊長</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="consent"><span>未滿 18 歲：家長同意書</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="training"><span>出席出發前短宣集訓</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="testimony"><span>準備一個短見證，三分鐘內講完</span></label></li>
+                    <li class="pt-2"><h3 class="font-extrabold text-sm">行李</h3></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="medicine"><span>常用藥放在原裝盒，隨手提行李</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="sun"><span>防曬、帽、水樽、可濕的鞋</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="plug"><span>轉接插頭。台灣是 110V、扁腳</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="cash"><span>新台幣現金、行動電源</span></label></li>
+                    <li><label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="pb-checkbox mt-0.5" data-id="bible"><span>聖經同筆記</span></label></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <section id="timeline" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">🗓 出發前時間表</h2>
+        <div class="pb-card">
+            <div class="timeline-container">
+                <div class="timeline-item must-go">
+                    <span class="pb-tag tag-green mb-1">已完成</span>
+                    <h3 class="font-bold text-lg">2026年10月7日 · 申請已交</h3>
+                    <p class="text-sm">宣道會基蔭堂向中華福音使命團申請這次台灣短宣。教牧是麥志江牧師，領隊是邱明德。</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="pb-tag tag-yellow mb-1">2027年1月26日前</span>
+                    <h3 class="font-bold text-lg">截止報名，交齊隊員資料</h3>
+                    <p class="text-sm">使命團以出發前兩個月為限。資料交齊，工場才編得到日程。</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="pb-tag tag-blue mb-1">日期待通知</span>
+                    <h3 class="font-bold text-lg">短宣集訓</h3>
+                    <p class="text-sm">每一位隊員都要出席中華福音使命團出發前的集訓。</p>
+                </div>
+                <div class="timeline-item must-go">
+                    <span class="pb-tag tag-pink mb-1">2027年3月26日</span>
+                    <h3 class="font-bold text-lg">由香港出發</h3>
+                    <p class="text-sm">4日3夜。3月28日是復活節主日，3月29日返港。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prayer" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">🙏 禱告事項</h2>
+        <div class="pb-card">
+            <ul class="space-y-4">
+                <li><span class="pb-tag tag-pink">隊員的心</span> 求主預備這 11 位青少年，敢於被使用，也肯被在地的弟兄姊妹教導。</li>
+                <li><span class="pb-tag tag-yellow">工場安排</span> 為中華福音使命團同恆春的接待教會禱告。住宿、交通、聚會對象，都在上帝手裡。</li>
+                <li><span class="pb-tag tag-blue">復活節主日</span> 3月28日一齊敬拜的時候，求主讓兩邊的教會都遇見復活的主，而不只是完成一個行程。</li>
+                <li><span class="pb-tag tag-green">身體與安全</span> 飛行、長途車、淨灘、飲食。求主保守沒有人掉隊，也沒有人硬撐。</li>
+                <li><span class="pb-tag tag-pink">回來之後</span> 求主讓這次看見的，變成回到基蔭堂之後仍然在意的人。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="notes" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">⚠️ 須知</h2>
+        <div class="pb-card space-y-4">
+            <div>
+                <h3 class="font-bold text-lg">證件</h3>
+                <p class="text-sm">香港居民去台灣要辦入台證，不是只帶回鄉證或身份證。香港出生、停留不多於 30 日，多數可以辦免費網簽；不是香港出生，或第一次去台灣，可能要走雲端申請，要預早數星期。自己到內政部移民署網站按最新規定辦理，並存好證明。<a class="font-bold underline" href="https://www.immigration.gov.tw/" target="_blank" rel="noopener noreferrer">移民署</a></p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">保險</h3>
+                <p class="text-sm">使命團要求旅遊保險包括 24 小時緊急支援。出發前把保單資料交一份給隊長。隊長保管一份，教會再存一份，應急用。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">誰可以去</h3>
+                <p class="text-sm">這次是青少年短宣，預計 11 人，上限跟工場安排。使命團的一般規定是 8 至 70 歲，行動自如；8 至 14 歲要有父親或母親同行。15 至 17 歲要有家長書面同意。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">天氣同裝備</h3>
+                <p class="text-sm">3 月底恆春大致溫暖，日間可以是短袖，早晚加一件薄外套。要備防曬、帽同薄雨衣。淨灘當日穿可以弄污的衣服。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">電、錢、上網</h3>
+                <p class="text-sm">台灣電壓 110V，插座是扁腳（A 型）。手機充電器多數 100–240V 都可用，風筒這類大電器先看標籤。夜市同小店多用現金，預先換一些新台幣。上網可以用漫遊或落地再買卡，出發前在群組講定。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">在工場的時候</h3>
+                <p class="text-sm">跟工場負責人的指示生活同工作。個人貴重物品自己看管。有不適要即時跟隊長說，不要自己硬撐。</p>
+            </div>
+            <div class="soft-box" style="background:#FDE8E3;">
+                <h3 class="font-extrabold text-lg mb-1">緊急聯絡</h3>
+                <p class="font-bold">隊長邱明德（德仔） <a href="tel:+85266448374">6644 8374</a></p>
+                <p class="text-sm font-bold">基蔭堂辦事處 <a href="tel:+85224926502">2492 6502</a> · 荃灣新領域廣場 11 樓 1113 室</p>
+                <p class="text-sm mt-1">在台灣：報案 110，救護同消防 119。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="budget" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">💰 費用</h2>
+        <div class="pb-card">
+            <p class="text-sm mb-4">總數未有工場報價，這頁不估一個假數字。下面是這次會出現的項目，確認後補上每人應付金額。</p>
+            <ul class="space-y-2 font-bold">
+                <li class="flex justify-between gap-3 items-center"><span>來回機票 HKG ↔ KHH</span><span class="pb-tag tag-yellow">待報價</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>當地住宿（3 晚）</span><span class="pb-tag tag-yellow">待報價</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>當地交通</span><span class="pb-tag tag-yellow">待報價</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>部分餐費</span><span class="pb-tag tag-yellow">待報價</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>旅遊保險</span><span class="pb-tag tag-blue">自費</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>入台證（如適用）</span><span class="pb-tag tag-blue">自費</span></li>
+                <li class="flex justify-between gap-3 items-center"><span>個人零用、伴手禮</span><span class="pb-tag tag-blue">自費</span></li>
+            </ul>
+            <p class="text-sm mt-4">若使命團指定閱讀或工場聚會要用的道具，隊長會另行列出，不會臨時在機場先說。</p>
+        </div>
+    </section>
+
+    <section id="map" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">🗺️ 地圖</h2>
+        <div class="pb-card">
+            <p class="text-sm mb-4">住宿地址未定。下面先放這次會經過的地方，方便你自己認路。</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E6%81%86%E6%98%A5%E9%8E%AE" target="_blank" rel="noopener noreferrer" class="pb-btn bg-[var(--yellow)] px-4 py-2 text-center">📍 恆春鎮</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E7%81%A3%E6%81%86%E6%98%A5" target="_blank" rel="noopener noreferrer" class="pb-btn bg-[var(--blue)] px-4 py-2 text-center">🏖 南灣</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%B5%9D%E9%91%BE%E9%BC%BB%E7%87%88%E5%A1%94" target="_blank" rel="noopener noreferrer" class="pb-btn bg-[var(--pink)] px-4 py-2 text-center">🗼 鵝鑾鼻燈塔</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener noreferrer" class="pb-btn bg-[var(--green)] px-4 py-2 text-center">✈️ 高雄小港機場</a>
+            </div>
+            <div class="mt-6 overflow-hidden" style="border: 3px solid #3E3A39; border-radius: 15px;">
+                <iframe title="恆春鎮地圖" width="100%" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=120.65%2C21.85%2C120.90%2C22.10&amp;layer=mapnik&amp;marker=22.003%2C120.744"></iframe>
+            </div>
+            <p class="text-xs text-center mt-2 font-bold">恆春鎮一帶（OpenStreetMap）</p>
+        </div>
+    </section>
+
+    <section id="faq" class="mb-12">
+        <h2 class="text-2xl font-extrabold mb-4">❓ 常見問題</h2>
+        <div class="pb-card space-y-4">
+            <div>
+                <h3 class="font-bold">住宿什麼時候有地址？</h3>
+                <p class="text-sm">工場確認後才有。有了會改這頁，也會在群組說。</p>
+            </div>
+            <div>
+                <h3 class="font-bold">航班是不是已經訂了？</h3>
+                <p class="text-sm">未當已訂。頁上的 UO130 同 CX433 是籌備方向，以最後機票為準。</p>
+            </div>
+            <div>
+                <h3 class="font-bold">要不要參加集訓？</h3>
+                <p class="text-sm">要。中華福音使命團出發前的集訓，隊員都要出席。日期確定後通知。</p>
+            </div>
+            <div>
+                <h3 class="font-bold">餐費怎樣算？</h3>
+                <p class="text-sm">愛宴同部分團隊用餐由行程包，其餘自理。恆春老街選擇多，自己帶少量現金。</p>
+            </div>
+            <div>
+                <h3 class="font-bold">我未滿 18 歲，可以去嗎？</h3>
+                <p class="text-sm">可以先問隊長。15 至 17 歲要家長書面同意。8 至 14 歲按使命團規定要有父或母同行。這次隊伍以青少年為主。</p>
+            </div>
+            <div>
+                <h3 class="font-bold">有問題找誰？</h3>
+                <p class="text-sm">找隊長德仔 <a class="font-bold underline" href="tel:+85266448374">6644 8374</a>。不要把問題只留在心裡直到機場。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-8 pb-8 font-bold text-sm">
+        <p>宣道會基蔭堂約書亞團 · 2027 台灣屏東短宣</p>
+        <p class="mt-1">隊長邱明德 · <a href="tel:+85266448374">6644 8374</a></p>
+        <p class="mt-2 text-xs font-bold">與中華福音使命團同行。日程以工場最後通知為準。</p>
+    </footer>
+
+    <script>
+        const countDownDate = new Date("2027-03-26T08:00:00+08:00").getTime();
+        const countdownEl = document.getElementById("countdown");
+
+        function renderCountdown() {
+            const distance = countDownDate - Date.now();
+            if (distance < 0) {
+                countdownEl.textContent = "我們出發啦";
+                return;
+            }
+            const days = Math.floor(distance / 86400000);
+            const hours = Math.floor((distance % 86400000) / 3600000);
+            const minutes = Math.floor((distance % 3600000) / 60000);
+            countdownEl.textContent = days + " 天 " + hours + " 小時 " + minutes + " 分";
+        }
+        renderCountdown();
+        setInterval(renderCountdown, 30000);
+
+        function openTab(evt, tabName) {
+            document.querySelectorAll(".tab-content").forEach(function (panel) {
+                panel.style.display = "none";
+                panel.classList.remove("active", "animate-bounce-in");
+            });
+            document.querySelectorAll(".tab-btn").forEach(function (btn) {
+                btn.classList.remove("is-pressed");
+                btn.classList.add("opacity-70");
+                btn.setAttribute("aria-selected", "false");
+            });
+            const targetTab = document.getElementById(tabName);
+            targetTab.style.display = "block";
+            targetTab.classList.add("active");
+            void targetTab.offsetWidth;
+            targetTab.classList.add("animate-bounce-in");
+            const current = evt.currentTarget;
+            current.classList.add("is-pressed");
+            current.classList.remove("opacity-70");
+            current.setAttribute("aria-selected", "true");
+            const scroller = current.closest(".day-tabs");
+            if (scroller) {
+                const target = current.offsetLeft - (scroller.clientWidth - current.offsetWidth) / 2;
+                scroller.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+            }
+        }
+
+        function sharePage() {
+            const url = window.location.href;
+            const payload = {
+                title: "約書亞團2027台灣屏東短宣之旅",
+                text: "約書亞團 2027年3月26日至29日台灣屏東短宣",
+                url: url
+            };
+            const showCopied = function () {
+                const msg = document.getElementById("share-msg");
+                msg.classList.remove("hidden");
+                setTimeout(function () { msg.classList.add("hidden"); }, 3000);
+            };
+            if (navigator.share) {
+                navigator.share(payload).catch(function () {});
+                return;
+            }
+            const done = function () { showCopied(); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(done).catch(function () {
+                    fallbackCopy(url, done);
+                });
+            } else {
+                fallbackCopy(url, done);
+            }
+        }
+
+        function fallbackCopy(url, done) {
+            const input = document.createElement("textarea");
+            input.value = url;
+            document.body.appendChild(input);
+            input.select();
+            try { document.execCommand("copy"); done(); } catch (err) {}
+            document.body.removeChild(input);
+        }
+
+        function renderTodoProgress() {
+            const boxes = document.querySelectorAll("#todo-list input[type='checkbox']");
+            let done = 0;
+            boxes.forEach(function (box) { if (box.checked) done += 1; });
+            document.getElementById("todo-progress").textContent = "已完成 " + done + " / " + boxes.length;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            openTab({ currentTarget: document.getElementById("defaultOpen") }, "day1");
+            document.querySelectorAll("#todo-list input[type='checkbox']").forEach(function (box) {
+                const key = "joshua2027_" + box.dataset.id;
+                box.checked = localStorage.getItem(key) === "true";
+                box.addEventListener("change", function () {
+                    localStorage.setItem(key, box.checked);
+                    renderTodoProgress();
+                });
+            });
+            renderTodoProgress();
+        });
+    </script>
+</body>
+</html>
