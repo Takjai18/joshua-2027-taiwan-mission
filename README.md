@@ -10,9 +10,13 @@
 
 期望頁：https://joshua-2027-taiwan-mission.ymtwill.workers.dev/expectations
 
+管理員頁（改公開頁文字，儲存後全隊都見到）：https://joshua-2027-taiwan-mission.ymtwill.workers.dev/admin
+
+密碼只交畀隊長，唔會寫喺呢度。
+
 ## 更新
 
-改 `public/index.html`，然後喺呢個資料夾部署：
+公開頁文字喺管理員頁改就得。如果要改版面或者加功能，先改 `public/` 同 `src/`，然後喺呢個資料夾部署：
 
 ```bash
 cd "/Users/mingtakyau/Documents/AI Project/joshua-2027-taiwan-mission"

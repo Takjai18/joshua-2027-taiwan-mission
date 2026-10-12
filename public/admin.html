@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理 · 約書亞團2027台灣屏東短宣</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#FFFCF6">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-color: #FFFCF6;
+            --border-color: #3E3A39;
+            --pink: #F2A497;
+            --yellow: #F6D27A;
+            --blue: #A8D3E6;
+            --green: #B9DAA5;
+            --border-width: 3px;
+            --border-radius: 20px;
+        }
+        body {
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--border-color);
+            line-height: 1.6;
+        }
+        .pb-card {
+            background-color: white;
+            border: var(--border-width) solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: 6px 6px 0px var(--border-color);
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .pb-btn {
+            border: var(--border-width) solid var(--border-color);
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 3px 3px 0px var(--border-color);
+            transition: all 0.1s;
+            color: var(--border-color);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .pb-btn:active { box-shadow: none; transform: translate(3px, 3px); }
+        .pb-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .field {
+            width: 100%;
+            border: 3px solid var(--border-color);
+            border-radius: 14px;
+            padding: 0.65rem 0.8rem;
+            background: white;
+            font: inherit;
+            color: inherit;
+        }
+        .field:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+        .item-card {
+            border: 2px dashed var(--border-color);
+            border-radius: 14px;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: var(--bg-color);
+            border-bottom: 3px solid var(--border-color);
+            padding: 0.75rem 0;
+            margin-bottom: 1rem;
+        }
+        .msg { min-height: 1.5rem; font-weight: 700; }
+        .msg.error { color: #9c3b32; }
+        .jump {
+            border: 2px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 0.15rem 0.7rem;
+            background: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .grid-2 { display: grid; gap: 0 0.75rem; }
+        @media (min-width: 640px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+        .row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
+        .row .field { flex: 1; min-width: 0; }
+        .hint { font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .mini { padding: 0.25rem 0.75rem; font-size: 0.875rem; background: white; }
+        .pre { white-space: pre-wrap; }
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body class="pb-16 px-4 md:px-8 max-w-3xl mx-auto">
+    <header class="pt-6 pb-2">
+        <p class="text-sm font-bold"><a href="/">← 返回公開頁</a></p>
+        <h1 class="text-2xl font-extrabold mt-2">管理網站內容</h1>
+    </header>
+
+    <section id="login-card" class="pb-card mt-4" hidden>
+        <p class="mb-4">隊長先輸入密碼。儲存之後，公開頁會即刻改，全隊都見到。</p>
+        <form id="login-form">
+            <label class="block mb-4" for="password">
+                <span class="block text-sm font-bold mb-1">密碼</span>
+                <input id="password" class="field" type="password" autocomplete="current-password" required>
+            </label>
+            <button id="login-btn" class="pb-btn bg-[var(--pink)] px-6 py-2 text-lg" type="submit">入去</button>
+            <p id="login-msg" class="msg mt-3" role="status"></p>
+        </form>
+    </section>
+
+    <div id="editor" hidden>
+        <div class="toolbar">
+            <div class="flex flex-wrap gap-2 items-center">
+                <button id="save-btn" class="pb-btn bg-[var(--pink)] px-5 py-2" type="button">儲存</button>
+                <button id="reset-btn" class="pb-btn bg-[var(--yellow)] px-4 py-2" type="button">還原預設</button>
+                <a class="pb-btn bg-[var(--blue)] px-4 py-2" href="/" target="_blank" rel="noopener noreferrer">睇公開頁</a>
+                <button id="logout-btn" class="pb-btn bg-[var(--green)] px-4 py-2" type="button">登出</button>
+            </div>
+            <p id="save-msg" class="msg mt-2" role="status"></p>
+        </div>
+        <nav id="jumps" class="flex flex-wrap gap-2 mb-4" aria-label="欄目">
+            <a class="jump" href="#sec-hero">首頁</a>
+            <a class="jump" href="#sec-about">點解去</a>
+            <a class="jump" href="#sec-transport">交通</a>
+            <a class="jump" href="#sec-days">行程</a>
+            <a class="jump" href="#sec-stay">住宿</a>
+            <a class="jump" href="#sec-todos">準備</a>
+            <a class="jump" href="#sec-miles">出發前</a>
+            <a class="jump" href="#sec-prayers">禱告</a>
+            <a class="jump" href="#sec-notes">須知</a>
+            <a class="jump" href="#sec-emergency">緊急</a>
+            <a class="jump" href="#sec-budget">費用</a>
+            <a class="jump" href="#sec-maps">地圖</a>
+            <a class="jump" href="#sec-faqs">問題</a>
+            <a class="jump" href="#sec-footer">頁尾</a>
+            <a class="jump" href="#sec-hopes">期望</a>
+        </nav>
+        <div id="sections"></div>
+        <section id="sec-hopes" class="pb-card">
+            <h2 class="text-xl font-extrabold mb-1">參加者期望</h2>
+            <p class="text-sm mb-4">刪除之後，期望頁會即刻冇咗呢句。呢度唔會改到公開頁其他文字。</p>
+            <div id="hope-list"></div>
+        </section>
+    </div>
+    <script src="/admin.js"></script>
+</body>
+</html>
