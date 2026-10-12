@@ -6,7 +6,9 @@
 
 ## 頁面有啲咩
 
-倒數、航班同交通、四日行程、準備清單、禱告、須知、費用、地圖、常見問題。航班、住宿同總費用仍待確認，頁面有標明。
+倒數、航班同交通、四日行程、準備清單、禱告、須知、費用、地圖、常見問題，同埋[參加者期望](https://joshua-2027-taiwan-mission.ymtwill.workers.dev/expectations)。航班、住宿同總費用仍待確認，頁面有標明。
+
+期望頁：https://joshua-2027-taiwan-mission.ymtwill.workers.dev/expectations
 
 ## 更新
 

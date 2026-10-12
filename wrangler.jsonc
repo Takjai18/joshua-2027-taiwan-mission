@@ -1,9 +1,22 @@
 {
   "name": "joshua-2027-taiwan-mission",
   "account_id": "db0374b37171e14e52b085a4b4f0d1dc",
+  "main": "src/index.js",
   "compatibility_date": "2026-10-12",
   "assets": {
     "directory": "./public",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "joshua-2027-expectations",
+      "database_id": "6ff1af58-1da3-4cd6-a714-9d12cfbfcc94"
+    }
+  ],
+  "observability": {
+    "enabled": true
   }
 }

@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS expectations (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  body TEXT NOT NULL,
+  ip_hash TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
